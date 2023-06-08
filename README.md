@@ -143,16 +143,17 @@ endmodule
 ```
 #### JK FLIP-FLOP
 ```
-module jk(j,k,clk,q,qbar);
+module jkflipflop(j,k,clk,q,qbar);
 input j,k,clk;
-output reg q;
-output reg qbar;
+output q,qbar;
+reg q,qbar;
 always @(posedge clk)
-begin
-   q=(j&(~q))|((~k)&q);
-   qbar=((~j)&q)|(k &(~q));
-end 
+begin 
+q<=(j&~q)|(~k&q);
+qbar<=~q;
+end
 endmodule
+
 ```
 #### T FLIP-FLOP
 ```
@@ -190,7 +191,8 @@ endmodule
 ![srn](https://github.com/Dhanudhanaraj/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119218812/2e6ec9a9-9970-47b5-811e-1722a2acdf56)
 
 #### JK FLIP-FLOP
-![jkn](https://github.com/Dhanudhanaraj/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119218812/ed7a8585-69f2-4cac-a24f-1ce2c4e55b2e)
+![image](https://github.com/Dhanudhanaraj/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119218812/50ba2820-68f3-4abc-b394-aa7d8d554cf8)
+
 
 #### T FLIP-FLOP
 ![tn](https://github.com/Dhanudhanaraj/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119218812/122441fb-db4e-401c-87b0-41b05c501e43)
@@ -204,7 +206,7 @@ endmodule
 ![srt](https://github.com/Dhanudhanaraj/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119218812/b3490dd5-11ca-40d1-8d8d-4f71a57eba88)
 
 #### JK FLIP-FLOP
-![jkt](https://github.com/Dhanudhanaraj/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119218812/663f22cc-405e-48eb-8efe-2e3e3b6c69d8)
+![image](https://github.com/Dhanudhanaraj/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119218812/c5c82b81-c243-4515-8d9a-f3ab2c00cbc5)
 
 #### T FLIP-FLOP
 ![tt](https://github.com/Dhanudhanaraj/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119218812/b2b6bb77-cbf5-4aa9-b95e-846bc52c6e76)
